@@ -9,6 +9,8 @@ public class DubboProviderLaunch {
 
     /**
      * com.alibaba.dubbo.config.spring.schema.DubboNamespaceHandler
+     *
+     * init()
      */
 
     /**
@@ -20,7 +22,6 @@ public class DubboProviderLaunch {
     /**
      * com.alibaba.dubbo.config.ServiceConfig
      *
-     * onApplicationEvent()
      * export()
      * doExport()
      * doExportUrls()
