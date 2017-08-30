@@ -17,6 +17,7 @@
     <dubbo:protocol name="dubbo" port="20883"/>
 
     <!-- Dubbo暴露的服务接口 -->
-    <dubbo:service interface="test.dubbo.service.VersionService" ref="versionService"/>
+    <dubbo:service interface="test.dubbo.service.VersionService" ref="versionService"
+                   executes="20" accesslog="/var/log/dubbo/access.log" />
 
 </beans>

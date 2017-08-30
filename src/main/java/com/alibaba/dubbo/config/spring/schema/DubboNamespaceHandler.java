@@ -38,6 +38,7 @@ import com.alibaba.dubbo.config.spring.ServiceBean;
 public class DubboNamespaceHandler extends NamespaceHandlerSupport {
 
 	static {
+        // 检查是否有多个重复DubboNamespaceHandler类
 		Version.checkDuplicate(DubboNamespaceHandler.class);
 	}
 
