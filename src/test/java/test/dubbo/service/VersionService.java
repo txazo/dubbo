@@ -2,6 +2,6 @@ package test.dubbo.service;
 
 public interface VersionService {
 
-    public String getVersion();
+    public String getVersion(int time);
 
 }

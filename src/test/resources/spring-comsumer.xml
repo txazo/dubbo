@@ -12,7 +12,7 @@
 
     <!-- Dubbo远程服务代理 -->
     <dubbo:reference id="versionService" interface="test.dubbo.service.VersionService"
-                     cluster="failover" retries="5" async="true" timeout="5000"
-                     actives="20" loadbalance="consistenthash" />
+                     cluster="failover" retries="5" async="false" timeout="5000"
+                     actives="20" loadbalance="roundrobin" />
 
 </beans>
