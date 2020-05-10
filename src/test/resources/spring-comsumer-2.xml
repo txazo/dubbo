@@ -5,21 +5,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <!-- 服务实现 -->
-    <bean id="versionService" class="test.dubbo.service.impl.VersionServiceImpl"/>
-
-    <dubbo:application name="dubbo-app"/>
+    <dubbo:application name="dubbo-app-2" />
 
     <!-- Zookeeper注册中心 -->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
 
     <dubbo:monitor protocol="registry"/>
 
-    <!-- Dubbo暴露的服务端口 -->
-    <dubbo:protocol name="dubbo" port="20882"/>
-
-    <!-- Dubbo暴露的服务接口 -->
-    <dubbo:service interface="test.dubbo.service.VersionService" ref="versionService"
-                   executes="20" accesslog="/var/tmp/dubbo/access-2.log" />
+    <!-- Dubbo远程服务代理 -->
+    <dubbo:reference id="versionService2" interface="test.dubbo.service.VersionService"
+                     cluster="failfast" retries="5" async="true" timeout="5000"
+                     actives="20" loadbalance="roundrobin" />
 
 </beans>
